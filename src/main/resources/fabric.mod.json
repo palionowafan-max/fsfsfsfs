@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "robloxcloudly",
+  "version": "${version}",
+  "name": "robloxcloudly.gg",
+  "description": "Serwer robloxcloudly.gg: lobby ze spawnem, hoverboard i tryb Steal an Egg (100 map po 5 graczy, 9 swiatow, bossy, bieznie). Mod tylko na serwer.",
+  "authors": ["Ziomsigiemka Studio"],
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.robloxcloudly.RobloxCloudly"]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.1",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
