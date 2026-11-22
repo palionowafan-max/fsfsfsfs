@@ -80,7 +80,7 @@ public class MapRuntime {
         ready = false;
         GameManager.command(forceCmd("add"));
         GameManager.command(String.format(Locale.ROOT, "execute in %s run forceload add %d %d %d -24", Layout.DIM, ox - 26, Layout.z1(W - 1) - 2, ox + 26));
-        boolean built = level().getBlockState(new BlockPos(ox, 63, 44)).is(Blocks.DIRT);
+        boolean built = level().getBlockState(new BlockPos(ox, 62, 44)).is(Blocks.BEDROCK);
         if (built) {
             spawnDelay = 40;
         } else {
@@ -105,6 +105,7 @@ public class MapRuntime {
         if (!active) return;
         if (building) {
             if (queue.step(level(), 12000)) {
+                level().setBlock(new BlockPos(ox, 62, 44), Blocks.BEDROCK.defaultBlockState(), 2);
                 building = false;
                 queue = null;
                 spawnDelay = 20;
