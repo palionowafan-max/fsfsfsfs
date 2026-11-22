@@ -140,7 +140,10 @@ public final class GameManager {
         boolean inLobby = lvl.dimension().equals(LOBBY);
         UUID id = p.getUUID();
         Integer idx = PLAYER_MAP.get(id);
-        if (idx != null && !inSteal) { leave(p); idx = null; }
+               if (idx != null && !inSteal) {
+            MapRuntime wm = MAPS.get(idx);
+            if (wm == null || (wm.ready && !wm.waiting.contains(id))) { leave(p); idx = null; }
+        }
         tickHover(p, inLobby || inSteal);
         if ((inLobby || inSteal) && ticks % 100 == 0) p.getFoodData().setFoodLevel(20);
         if (inLobby) {
